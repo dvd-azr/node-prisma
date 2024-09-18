@@ -38,4 +38,5 @@ COPY --chown=node:node --from=engine-builder  /app/node_modules/.prisma/client .
 
 EXPOSE 4500
 
-CMD ["node", "src/index.js"]
+# CMD ["node", "./src/index.js"]
+CMD ["npm", "start"]
