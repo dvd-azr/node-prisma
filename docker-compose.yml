@@ -7,3 +7,12 @@ services:
     container_name: mysql
     ports:
       - 3306:3306
+    networks:
+      - nodejsPrisma
+    environment:
+      - DOCKER_INTERNAL_HOST=host.docker.internal
+
+networks:
+  db:
+    name: nodejsPrisma
+    driver: bridge

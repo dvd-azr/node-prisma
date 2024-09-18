@@ -6,6 +6,7 @@ const HOST = process.env.HOST || "http://localhost";
 const PORT = parseInt(process.env.PORT || "4500");
 
 console.log(process.env.DATABASE_URL);
+console.log(process.env.DOCKER_INTERNAL_HOST);
 
 const app = express();
 
