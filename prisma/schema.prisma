@@ -4,8 +4,8 @@ generator client {
 
 datasource db {
     provider          = "mysql"
-    url               = env("DATABASE_URL")
-    // url               = "mysql://root@10.0.2.2:3306/teco-blog"
+    // url               = env("DATABASE_URL")
+    url               = "mysql://root@10.0.2.2:3306/teco-blog"
     shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
     relationMode      = "prisma"
 }
