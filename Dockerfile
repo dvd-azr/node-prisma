@@ -16,28 +16,28 @@ RUN yarn prisma generate
 # RUN yarn tsc
 
 
-FROM node:20 as engine-builder
+# FROM node:20 as engine-builder
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY --chown=node:node --from=builder /app/prisma/schema.prisma ./app/prisma/
+# COPY --chown=node:node --from=builder /app/prisma/schema.prisma ./app/prisma/
 
-RUN npx prisma generate --schema=./app/prisma/schema.prisma
+# RUN npx prisma generate --schema=./app/prisma/schema.prisma
 
 
-FROM node:20-alpine AS runner
+# FROM node:20-alpine AS runner
 
-ENV NODE_ENV=production
+# ENV NODE_ENV=production
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY --chown=node:node --from=builder /app/package.json .
+# COPY --chown=node:node --from=builder /app/package.json .
 
-# COPY --chown=node:node --from=builder /app/build .
+# # COPY --chown=node:node --from=builder /app/build .
 
-RUN yarn install --production && yarn cache clean --all
+# RUN yarn install --production && yarn cache clean --all
 
-COPY --chown=node:node --from=engine-builder  /app/node_modules/.prisma/client ./node_modules/.prisma/client
+# COPY --chown=node:node --from=engine-builder  /app/node_modules/.prisma/client ./node_modules/.prisma/client
 
 EXPOSE 4500
 
