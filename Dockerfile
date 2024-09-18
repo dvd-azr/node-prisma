@@ -7,7 +7,9 @@ WORKDIR /app
 COPY . .
 COPY .env.example ./.env
 
-# RUN yarn install --frozen-lockfile
+RUN ls
+
+RUN yarn install --frozen-lockfile
 
 RUN yarn prisma generate
 
