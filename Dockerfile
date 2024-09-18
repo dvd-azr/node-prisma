@@ -10,7 +10,7 @@ RUN yarn install --frozen-lockfile
 
 RUN yarn prisma generate
 
-RUN yarn tsc
+# RUN yarn tsc
 
 
 FROM node:20-alpine as engine-builder
