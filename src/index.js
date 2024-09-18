@@ -5,6 +5,8 @@ import { postRoute } from "./post.route.js";
 const HOST = process.env.HOST || "http://localhost";
 const PORT = parseInt(process.env.PORT || "4500");
 
+console.log(process.env.DATABASE_URL);
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
