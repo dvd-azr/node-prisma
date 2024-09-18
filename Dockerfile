@@ -5,6 +5,7 @@ RUN mkdir app
 WORKDIR /app
 
 COPY . .
+COPY .env.example .env
 
 RUN yarn install --frozen-lockfile
 
