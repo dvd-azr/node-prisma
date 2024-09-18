@@ -21,9 +21,9 @@ RUN yarn install --frozen-lockfile
 
 # WORKDIR /app
 
-# COPY --chown=node:node --from=builder /app/prisma/schema.prisma ./app/prisma/
+COPY --chown=node:node --from=builder /app/prisma/schema.prisma ./app/prisma/
 
-# RUN npx prisma generate --schema=./app/prisma/schema.prisma
+RUN npx prisma generate --schema=./app/prisma/schema.prisma
 
 
 # FROM node:20-alpine AS runner
