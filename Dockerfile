@@ -8,7 +8,8 @@ COPY . .
 COPY .env.example ./.env
 
 RUN pwd
-RUN ls
+RUN ls 
+RUN ls prisma
 
 RUN yarn install --frozen-lockfile
 
@@ -23,7 +24,7 @@ RUN yarn install --frozen-lockfile
 
 # COPY --chown=node:node --from=builder /app/prisma/schema.prisma ./app/prisma/
 
-RUN npx prisma generate --schema=./app/prisma/schema.prisma
+# RUN npx prisma generate --schema=./app/prisma/schema.prisma
 
 
 # FROM node:20-alpine AS runner
