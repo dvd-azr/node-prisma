@@ -1,4 +1,4 @@
-FROM node:20-bullseye as builder
+FROM node:20 as builder
 
 RUN mkdir app
 
@@ -16,7 +16,7 @@ RUN yarn prisma generate
 # RUN yarn tsc
 
 
-FROM node:20-alpine as engine-builder
+FROM node:20 as engine-builder
 
 WORKDIR /app
 
