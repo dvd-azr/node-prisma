@@ -11,6 +11,10 @@ RUN pwd
 RUN ls 
 RUN ls prisma
 
+run echo host.docker.internal
+
+run netstat -tlpn | grep ":3306"
+
 RUN yarn install --frozen-lockfile
 
 RUN npx prisma migrate dev --name migrate_from_docker
