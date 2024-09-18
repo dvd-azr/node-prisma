@@ -13,6 +13,8 @@ RUN ls prisma
 
 RUN yarn install --frozen-lockfile
 
+RUN npx prisma migrate dev --name migrate_from_docker
+
 # RUN yarn prisma generate
 
 # RUN yarn tsc
