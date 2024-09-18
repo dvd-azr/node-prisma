@@ -30,7 +30,7 @@ WORKDIR /app
 
 COPY --chown=node:node --from=builder /app/package.json .
 
-COPY --chown=node:node --from=builder /app/build .
+# COPY --chown=node:node --from=builder /app/build .
 
 RUN yarn install --production && yarn cache clean --all
 
