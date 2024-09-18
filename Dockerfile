@@ -11,7 +11,7 @@ RUN ls
 
 RUN yarn install --frozen-lockfile
 
-RUN yarn prisma generate
+# RUN yarn prisma generate
 
 # RUN yarn tsc
 
